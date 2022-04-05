@@ -33,8 +33,12 @@ public class Challenge {
             case null -> {
                 return null;
             }
-            case Collection c -> c.size();
-            case Map map -> map.size();
+            case Collection c -> {
+                return c.size();
+            }
+            case Map map -> {
+                return map.size();
+            }
             case byte[] array -> {
                 return array.length;
             }
@@ -63,6 +67,5 @@ public class Challenge {
                 return -1;
             }
         }
-        return 0;
     }
 }
