@@ -33,7 +33,7 @@ public class Challenge {
             case Collection c ->  c.size();
             case Map m ->  m.size();
             case Object[] ia ->  ia.length;
-            default -> -1
+            default -> -1;
         }
     }
 }
