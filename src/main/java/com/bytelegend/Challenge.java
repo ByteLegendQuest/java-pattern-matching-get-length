@@ -2,6 +2,8 @@ package com.bytelegend;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Collection;
 
 public class Challenge {
     public static void main(String[] args) {
