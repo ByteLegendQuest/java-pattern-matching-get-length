@@ -44,6 +44,6 @@ public class Challenge {
             case boolean[] a -> a.length;
             case Object[] a -> a.length;
             default -> -1;
-        }
+        };
     }
 }
