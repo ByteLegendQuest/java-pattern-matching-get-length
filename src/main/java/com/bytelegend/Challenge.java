@@ -43,6 +43,7 @@ public class Challenge {
             case short[] arr -> arr.length;
             case boolean[] arr -> arr.length;
             case Object[] arr -> arr.length;
+            default -> -1;
         };
     }
 }
