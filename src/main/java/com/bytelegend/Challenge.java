@@ -1,7 +1,6 @@
 package com.bytelegend;
 
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 public class Challenge {
     public static void main(String[] args) {
@@ -28,6 +27,21 @@ public class Challenge {
      * Matching for switch](https://openjdk.java.net/jeps/406)**
      */
     public static Integer getLength(Object obj) {
-        return 0;
+        Integer ans;
+        switch (obj) {
+            case null -> ans = null;
+            case Collection<?> c -> ans = c.size();
+            case Map<?, ?> m -> ans = m.size();
+            case int[] i -> ans = i.length;
+            case double[] d -> ans = d.length;
+            case long[] l -> ans = l.length;
+            case short[] s -> ans = s.length;
+            case float[] f -> ans = f.length;
+            case char[] c -> ans = c.length;
+            case byte[] b -> ans = b.length;
+            case Object[] o -> ans = o.length;
+            default -> ans = -1;
+        }
+        return ans;
     }
 }
