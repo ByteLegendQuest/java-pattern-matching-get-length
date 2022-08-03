@@ -1,14 +1,16 @@
 package com.bytelegend;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Challenge {
     public static void main(String[] args) {
         System.out.println(getLength(null));
         System.out.println(getLength(Arrays.asList(1, 2, 3)));
         System.out.println(getLength(new HashMap<String, Object>()));
-        System.out.println(getLength(new int[] {1}));
+        System.out.println(getLength(new int[]{1}));
     }
 
     /**
