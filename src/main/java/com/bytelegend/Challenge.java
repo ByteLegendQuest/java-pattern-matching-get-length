@@ -45,6 +45,6 @@ public class Challenge {
             case short[] a -> a.length;
             case Object[] a -> a.length;
             default -> -1;
-        }
+        };
     }
 }
