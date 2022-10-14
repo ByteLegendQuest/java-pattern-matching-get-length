@@ -35,7 +35,7 @@ public class Challenge {
         return switch (obj){
             case Collection c -> c.size();
             case Map m -> m.size();
-            case Array[] a -> a.length;
+            case Arrays[] a -> a.length;
             default -> -1;
         };
     }
