@@ -32,7 +32,7 @@ public class Challenge {
             return null;
         }
 
-        return switch (obj.getClass()){
+        return switch (obj){
             case Collection c -> c.size();
             case Map m -> m.size();
             case Array[] a -> a.length;
