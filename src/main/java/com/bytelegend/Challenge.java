@@ -1,9 +1,7 @@
 package com.bytelegend;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Challenge {
     public static void main(String[] args) {
@@ -30,61 +28,6 @@ public class Challenge {
      * Matching for switch](https://openjdk.java.net/jeps/406)**
      */
     public static Integer getLength(Object obj) {
-
-        Integer integer = typeTester(obj);
-        return integer;
+        return 0;
     }
-    static Integer typeTester(Object o) {
-        switch (o) {
-            case null     -> {return null;}
-            case Collection collection -> {
-                return collection.size();
-            }
-            case Map map  -> {
-
-                return map.size();
-            }
-            case String[] ia -> {
-
-                return ia.length;
-            }
-            case Object[] ia -> {
-
-                return ia.length;
-            }
-            case int[] ia -> {
-
-                return ia.length;
-            }
-            case double[] ia -> {
-
-                return ia.length;
-            }
-            case long[] ia -> {
-
-                return ia.length;
-            }
-            case short[] ia -> {
-
-                return ia.length;
-            }
-            case float[] ia -> {
-
-                return ia.length;
-            }
-            case char[] ia -> {
-
-                return ia.length;
-            }
-            case byte[] ia -> {
-
-                return ia.length;
-            }
-            default       -> {
-
-                return -1;
-            }
-        }
-    }
-
 }
