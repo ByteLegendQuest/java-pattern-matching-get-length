@@ -2,6 +2,8 @@ package com.bytelegend;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Collection;
+import java.util.Map;
 
 public class Challenge {
     public static void main(String[] args) {
@@ -30,14 +32,19 @@ public class Challenge {
     public static Integer getLength(Object obj) {
         Integer length;
         switch (obj) {
-            case null -> {
-                return null;
-            }
-            case Arrays a -> length = obj.length;
-            case HashMap m -> length = obj.size();
-            case String s -> length = obj.szie();
-            default -> length = -1;
+            case null -> null;
+            case Collection<?> c -> c.size();
+            case Map<?, ?> m -> m.size();
+            case int[] ia -> ia.length;
+            case double[] da -> da.length;
+            case long[] la -> la.length;
+            case short[] da -> da.length;
+            case float[] da -> da.length;
+            case char[] da -> da.length;
+            case byte[] da -> da.length;
+            case String[] da -> da.length;
+            case Object[] da -> da.length;
+            default -> -1;
         }
-        return length;
     }
 }
