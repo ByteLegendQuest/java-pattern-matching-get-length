@@ -8,7 +8,7 @@ public class Challenge {
         System.out.println(getLength(null));
         System.out.println(getLength(Arrays.asList(1, 2, 3)));
         System.out.println(getLength(new HashMap<String, Object>()));
-        System.out.println(getLength(new int[] {1}));
+        System.out.println(getLength(new int[]{1}));
     }
 
     /**
@@ -28,6 +28,16 @@ public class Challenge {
      * Matching for switch](https://openjdk.java.net/jeps/406)**
      */
     public static Integer getLength(Object obj) {
-        return 0;
+        Integer length;
+        switch (obj) {
+            case null -> {
+                return null;
+            }
+            case Arrays a -> length = obj.length;
+            case HashMap m -> length = obj.size();
+            case String s -> length = obj.szie();
+            default -> length = -1;
+        }
+        return length;
     }
 }
