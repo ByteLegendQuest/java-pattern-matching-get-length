@@ -2,13 +2,15 @@ package com.bytelegend;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Collection;
+import java.util.Map;
 
 public class Challenge {
     public static void main(String[] args) {
         System.out.println(getLength(null));
         System.out.println(getLength(Arrays.asList(1, 2, 3)));
         System.out.println(getLength(new HashMap<String, Object>()));
-        System.out.println(getLength(new int[] {1}));
+        System.out.println(getLength(new int[]{1}));
     }
 
     /**
@@ -28,6 +30,20 @@ public class Challenge {
      * Matching for switch](https://openjdk.java.net/jeps/406)**
      */
     public static Integer getLength(Object obj) {
-        return 0;
+        return switch (obj) {
+            case null -> null;
+            case Collection<?> c -> c.size();
+            case Map<?, ?> m -> m.size();
+            case int[] ia -> ia.length;
+            case double[] da -> da.length;
+            case long[] la -> la.length;
+            case short[] da -> da.length;
+            case float[] da -> da.length;
+            case char[] da -> da.length;
+            case byte[] da -> da.length;
+            case String[] da -> da.length;
+            case Object[] da -> da.length;
+            default -> -1;
+        };
     }
 }
