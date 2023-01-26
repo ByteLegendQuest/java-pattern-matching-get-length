@@ -32,14 +32,15 @@ public class Challenge {
             case null -> null;
             case Collection<?> c -> c.size();
             case Map<?, ?> m -> m.size();
-            case Object[] o -> o.length;
             case int[] i -> i.length;
-            case double[] d ->d.length;
+            case double[] d -> d.length;
             case long[] l -> l.length;
             case short[] s -> s.length;
             case float[] f -> f.length;
             case char[] c -> c.length;
             case byte[] b -> b.length;
+            case String[] s -> s.length;
+            case Object[] o -> o.length;
             default -> -1;
         };
     }
