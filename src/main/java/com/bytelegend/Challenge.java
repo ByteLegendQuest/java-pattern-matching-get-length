@@ -33,7 +33,8 @@ public class Challenge {
     public static Integer getLength(Object obj) {
         return switch (obj) {
             case null     -> null;
-            case Collection c, Map c -> c.size();
+            case Collection c -> c.size();
+            case Map m -> m.size();
             default -> obj.getClass().isArray() ? Array.getLength(obj) : -1;
         };
     }
