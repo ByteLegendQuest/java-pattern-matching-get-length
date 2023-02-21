@@ -1,7 +1,10 @@
 package com.bytelegend;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Challenge {
     public static void main(String[] args) {
@@ -31,8 +34,7 @@ public class Challenge {
         return switch (obj) {
             case null     -> null;
             case Collection c, Map c -> c.size();
-            case Array a  -> a.length;
-            default       -> -1;
+            default -> obj.getClass().isArray() ? Array.getLength(obj) : -1;
         }
     }
 }
