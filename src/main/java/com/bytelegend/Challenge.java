@@ -35,6 +35,6 @@ public class Challenge {
             case null     -> null;
             case Collection c, Map c -> c.size();
             default -> obj.getClass().isArray() ? Array.getLength(obj) : -1;
-        }
+        };
     }
 }
