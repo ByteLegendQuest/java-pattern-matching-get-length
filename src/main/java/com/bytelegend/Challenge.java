@@ -30,9 +30,9 @@ public class Challenge {
     public static Integer getLength(Object obj) {
         switch (obj) {
             case Object null -> return null;
-            case Collection -> obj.size();
-            case Arrays -> obj.length();
-            case Map -> obj.size();
+            case Collection -> return obj.size();
+            case Arrays -> return obj.length();
+            case Map -> return obj.size();
             defalut -> return -1;
         }
         return -1
