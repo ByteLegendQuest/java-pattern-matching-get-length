@@ -29,10 +29,11 @@ public class Challenge {
      */
     public static Integer getLength(Object obj) {
         return switch (obj) {
-        case null -> null;
-        case Collection<?> c -> c.size();
-        case Map<?, ?> m -> m.size();
-        case Object[] a -> a.length;
-        default -> -1;
+            case null -> null;
+            case Collection<?> c -> c.size();
+            case Map<?, ?> m -> m.size();
+            case Object[] a -> a.length;
+            default -> -1;
+        };
     }
 }
