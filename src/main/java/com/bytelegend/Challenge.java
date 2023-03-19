@@ -28,6 +28,11 @@ public class Challenge {
      * Matching for switch](https://openjdk.java.net/jeps/406)**
      */
     public static Integer getLength(Object obj) {
-        return 0;
+        return switch (obj) {
+        case null -> null;
+        case Collection<?> c -> c.size();
+        case Map<?, ?> m -> m.size();
+        case Object[] a -> a.length;
+        default -> -1;
     }
 }
