@@ -2,6 +2,11 @@ package com.bytelegend;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Challenge {
     public static void main(String[] args) {
@@ -31,9 +36,8 @@ public class Challenge {
             return switch (obj) {
             case Collection a -> a.size();
             case Map b -> b.size();
-            case Object[] c -> c.length;
             case null -> null;
-            default -> -1;
+            default -> obj.getClass().isArray() ? Array.getLength(obj) : -1;
         };
     }
 }
