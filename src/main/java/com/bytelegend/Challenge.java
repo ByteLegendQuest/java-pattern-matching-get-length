@@ -2,6 +2,11 @@ package com.bytelegend;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Challenge {
     public static void main(String[] args) {
@@ -28,6 +33,11 @@ public class Challenge {
      * Matching for switch](https://openjdk.java.net/jeps/406)**
      */
     public static Integer getLength(Object obj) {
-        return 0;
+            return switch (obj) {
+            case Collection a -> a.size();
+            case Map b -> b.size();
+            case null -> null;
+            default -> obj.getClass().isArray() ? Array.getLength(obj) : -1;
+        };
     }
 }
